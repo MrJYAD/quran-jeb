@@ -1,0 +1,11 @@
+__pycache__/
+*.pyc
+*.log
+.venv/
+.pytest_cache/
+# model caches (weights come from the Hub at runtime, never from this repo)
+.cache/
+hf/
+*.safetensors
+*.bin
+*.onnx

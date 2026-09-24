@@ -1,0 +1,68 @@
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap");
+
+:root{
+  --paper:#FAF8F5; --ink:#141A1F; --sand:#EFEAE2; --line:#DCD5CA;
+  --muted:#5F6670; --jeb:#166A4E; --jeb-soft:#DCEDE6; --on-jeb:#FFFFFF;
+  --warn:#B5502F; --warn-soft:#F5E3DB; --amber:#9A6B1F; --amber-soft:#F6EBD6;
+  --surface:#FFFFFF;
+  --ar:"IBM Plex Sans Arabic",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,Menlo,Consolas,monospace;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --paper:#0F1418; --ink:#ECEFF2; --sand:#1B2429; --line:#2A343B;
+    --muted:#9BA5AE; --jeb:#3FB98D; --jeb-soft:#13332A; --on-jeb:#0F1418;
+    --warn:#D97A55; --warn-soft:#33211A; --amber:#D9A94E; --amber-soft:#2E2413;
+    --surface:#151C21;
+  }
+}
+:root[data-theme="dark"]{
+  --paper:#0F1418; --ink:#ECEFF2; --sand:#1B2429; --line:#2A343B;
+  --muted:#9BA5AE; --jeb:#3FB98D; --jeb-soft:#13332A; --on-jeb:#0F1418;
+  --warn:#D97A55; --warn-soft:#33211A; --amber:#D9A94E; --amber-soft:#2E2413;
+  --surface:#151C21;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--ar);
+     direction:rtl;line-height:1.6;-webkit-font-smoothing:antialiased}
+.wrap{max-width:900px;margin:0 auto;padding-block:28px 56px;padding-left:20px;padding-right:20px}
+a{color:var(--jeb)}
+.num{font-family:var(--mono);font-variant-numeric:tabular-nums;direction:ltr;display:inline-block}
+
+header.bar{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;
+  border-bottom:2px solid var(--ink);padding-bottom:12px;margin-bottom:22px}
+header.bar h1{margin:0;font-size:22px;font-weight:600;letter-spacing:-.01em}
+header.bar .back{font-size:13px;color:var(--muted);text-decoration:none}
+header.bar .back:hover,header.bar .back:focus-visible{color:var(--jeb)}
+
+.panel{background:var(--surface);border:1px solid var(--line);padding:18px}
+label.fld{display:block;font-size:12px;font-weight:600;color:var(--muted);margin-bottom:6px}
+input[type=text]{width:100%;font-family:var(--ar);font-size:15px;color:var(--ink);
+  background:var(--paper);border:1px solid var(--line);padding:10px 12px;border-radius:0;min-height:44px}
+input:focus-visible,button:focus-visible,a:focus-visible{outline:2px solid var(--jeb);outline-offset:2px}
+input:focus{outline:2px solid var(--jeb);outline-offset:-2px}
+
+button{font-family:var(--ar);font-size:14px;font-weight:600;padding:10px 20px;cursor:pointer;
+  background:var(--jeb);color:var(--on-jeb);border:none;min-height:44px}
+button:hover{filter:brightness(1.08)}
+button:disabled{opacity:.5;cursor:not-allowed}
+button.ghost{background:transparent;color:var(--ink);border:1px solid var(--line);font-weight:500}
+
+/* Arabic status text is Arabic: right-to-left, Arabic face. Numbers inside it use .num */
+.status{font-size:13px;color:var(--muted);margin:0}
+.status.err{color:var(--warn)}
+.timing{font-family:var(--mono);font-size:12px;color:var(--muted);direction:ltr;display:inline-block}
+.timing b{color:var(--jeb)}
+
+.chip{display:inline-block;font-size:11.5px;font-weight:600;padding:2px 9px;white-space:nowrap}
+.chip.ok{background:var(--jeb-soft);color:var(--jeb)}
+.chip.no{background:var(--warn-soft);color:var(--warn)}
+.chip.mid{background:var(--amber-soft);color:var(--amber)}
+.chip.flat{background:var(--sand);color:var(--muted)}
+
+.stack{display:flex;flex-direction:column;gap:12px}
+
+/* message box: empty, refusal and error states get the same weight as results */
+.msg{border:1px solid var(--line);border-right:3px solid var(--amber);background:var(--surface);
+     padding:14px 16px;font-size:15px;margin-top:18px}
+.msg.err{border-right-color:var(--warn)}

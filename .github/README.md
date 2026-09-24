@@ -1,17 +1,3 @@
----
-title: quran-jeb
-emoji: 📖
-colorFrom: green
-colorTo: gray
-sdk: docker
-app_port: 8001
-pinned: false
-license: apache-2.0
-short_description: Arabic questions, exact Quranic answers (jeb intent routing)
-models:
-  - IJyad/jeb
----
-
 # quran-jeb — Arabic questions, exact Quranic answers
 
 **Try it in the browser:** [huggingface.co/spaces/IJyad/quran-jeb](https://huggingface.co/spaces/IJyad/quran-jeb) · code: [github.com/MrJYAD/quran-jeb](https://github.com/MrJYAD/quran-jeb) · model: [IJyad/jeb](https://huggingface.co/IJyad/jeb)
